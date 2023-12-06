@@ -38,28 +38,28 @@ module diffe_hellman_algo
     logic [11:0] bcd_k, bcd_s;
     logic [31: 0] A_k, K1_k, B_s, K2_s;
     logic [4: 0] A_k_mod, B_s_mod, K1_k_mod, K2_s_mod;
-    early_debouncer kb(
-        .sw(k),
-        .reset(!reset),
-        .clk(clk), // genrally the 100MHz
-        .db(k_db)
-    );
+//    early_debouncer kb(
+//        .sw(k),
+//        .reset(!reset),
+//        .clk(clk), // genrally the 100MHz
+//        .db(k_db)
+//    );
     
-    early_debouncer sb(
-        .sw(s),
-        .reset(!reset),
-        .clk(clk), // genrally the 100MHz
-        .db(s_db)
-    );
+//    early_debouncer sb(
+//        .sw(s),
+//        .reset(!reset),
+//        .clk(clk), // genrally the 100MHz
+//        .db(s_db)
+//    );
     
-    ready_check_fsm Acknowledgement(
-    .clk(clk),
-    .reset(!reset),
-    .x_in(g), .y_in(n),
-    .k_r(k_db),
-    .s_r(s_db),
-    .x_out(g_out), .y_out(n_out)
-    );
+//    ready_check_fsm Acknowledgement(
+//    .clk(clk),
+//    .reset(!reset),
+//    .x_in(g), .y_in(n),
+//    .k_r(k_db),
+//    .s_r(s_db),
+//    .x_out(g_out), .y_out(n_out)
+//    );
     
     exponential_function A (
         .base(g),
